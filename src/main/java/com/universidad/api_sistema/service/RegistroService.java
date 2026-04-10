@@ -6,7 +6,7 @@ import com.universidad.api_sistema.repository.EstudianteRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RegistroService implements Notificable { // Implementamos la interfaz
+public class RegistroService implements Notificable { 
     private final EstudianteRepository repository;
 
     public RegistroService(EstudianteRepository repository) {
@@ -15,7 +15,6 @@ public class RegistroService implements Notificable { // Implementamos la interf
 
     public Estudiante guardarEstudiante(Estudiante estudiante) {
         Estudiante guardado = repository.save(estudiante);
-        // Aquí simulamos la acción de notificar
         System.out.println(enviarCorreo(guardado.getNombre())); 
         return guardado;
     }

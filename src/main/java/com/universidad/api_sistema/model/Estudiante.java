@@ -5,16 +5,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity // <--- ESTO ES LO QUE FALTABA
+@Entity 
 public class Estudiante extends Persona implements Autenticable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // JPA necesita una llave primaria numérica
+    private Long id; 
     
     private String codigo;
 
-    public Estudiante() {} // Constructor vacío obligatorio
+    public Estudiante() {} 
 
     public Estudiante(String nombre, String correo, String codigo) {
         super(nombre, correo);
